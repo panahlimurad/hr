@@ -7,13 +7,13 @@ import Sidebar from "../shared/BasisComponents/Sidebar/Sidebar";
 
 const MainLayouts = () => {
   return (
-    <div className="flex bg-red-400 h-screen">
+    <div className="flex h-screen">
       <div className="w-[17%]">
         <Sidebar />
       </div>
       <div className="w-[83%]">
         <Header />
-        <main>
+        <main className="bg-main-bg h-full">
           <Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path="/employees" element={<Employees />} />

@@ -3,7 +3,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 import SettingsIcon from "@mui/icons-material/Settings";
 import FullscreenIcon from '@mui/icons-material/Fullscreen';
-import Test from "../../../images/test.svg";
+import Test from "../../../images/usrbig.jpg";
 
 const Header = () => {
   return (
@@ -40,7 +40,7 @@ const Header = () => {
           />
         </div>
         <div className="cursor-pointer">
-          <img class="w-8 h-8 rounded-full" src={Test} alt="Rounded avatar" />
+          <img className="w-8 h-8 rounded-full object-cover" src={Test} alt="Rounded avatar" />
         </div>
         <div>
           <SettingsIcon

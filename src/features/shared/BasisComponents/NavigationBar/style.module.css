@@ -1,0 +1,46 @@
+
+.mainText{
+    font-weight: 400;
+    height: 45px;
+    color: #3f4254;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+}
+
+.activeMenu{
+    color: #3a71c7;
+    font-weight: 700;
+}
+  
+  .menu {
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+    overflow: hidden;
+    opacity: 0;
+    max-height: 0; 
+  }
+  
+  .menuVisible {
+    opacity: 1;
+    max-height: 100px;
+  }
+  
+  .menuHidden {
+    opacity: 0;
+    max-height: 0px;
+  }
+
+
+  .LiTagTransition{
+    transition: opacity 0.5s ease-in-out; 
+    cursor: pointer;
+  }
+
+  .openLiTagSub{
+    opacity: 1;
+  }
+
+  .closeLiTagSub{
+    opacity: 0;
+  }
