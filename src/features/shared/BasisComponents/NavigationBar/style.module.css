@@ -7,11 +7,16 @@
     justify-content: space-between;
     align-items: center;
     font-size: 14px;
+    padding: 0px 16px;
+    &:hover{
+        background-color: #f3f6f9;
+    }
 }
 
 .activeMenu{
     color: #3a71c7;
     font-weight: 700;
+    background-color: #f3f6f9;
 }
   
   .menu {

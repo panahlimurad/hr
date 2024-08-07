@@ -1,5 +1,4 @@
 
-// import './App.css';
 
 import Layouts from "./features/Layouts/Layouts";
 

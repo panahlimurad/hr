@@ -1,20 +1,20 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    openList:false,
+    toogleAuth:false,
 }
 
 const booleanSlice = createSlice({
     name:"boolean",
     initialState,
     reducers:{
-        openSidebarList: state=>{
-            state.openList = !state.openList
+        toogleAuthComponent: state=>{
+            state.toogleAuth = !state.toogleAuth
         },
     }
 })
 
 
-export const {openSidebarList} = booleanSlice.actions
+export const {toogleAuthComponent} = booleanSlice.actions
 
 export default booleanSlice.reducer
