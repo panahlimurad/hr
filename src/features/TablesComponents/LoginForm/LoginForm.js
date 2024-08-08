@@ -9,12 +9,13 @@ import notify from '../../utils/Functions/Toastify/toastify';
 import Cookies from "js-cookie";
 import { Link } from 'react-router-dom';
 import ButtonSpinner from '../../shared/SmallComponents/ButtonSpinner/ButtonSpinner';
+import { useAnimate } from 'framer-motion';
 
 
 const LoginForm = ({checked}) => {
   const [showPassword, setShowPassword] = useState(false);
   const [rememberMe, setRememberMe] = useState(false);
-
+  const navigate = useAnimate()
 
   const toggleRememberMe = () => {
     setRememberMe(!rememberMe);
@@ -42,7 +43,7 @@ const LoginForm = ({checked}) => {
           expires: 7,
         });
       }
-      // navigate("/");
+      navigate("/");
       console.log("okey", response);
     },
     onError: (error) => {
@@ -127,7 +128,7 @@ const LoginForm = ({checked}) => {
             </button>
           </div>
           <div className={styles.forgot}>
-            <Link className={styles.for}>Forgot your password?</Link>
+            <Link to={"forgot-password"} className={styles.for}>Forgot your password?</Link>
           </div>
         </form>
   )

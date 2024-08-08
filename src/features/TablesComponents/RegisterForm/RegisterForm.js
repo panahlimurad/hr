@@ -8,6 +8,7 @@ import { Register } from "../../services/api";
 import notify from "../../utils/Functions/Toastify/toastify";
 import ButtonSpinner from "../../shared/SmallComponents/ButtonSpinner/ButtonSpinner";
 
+
 const RegisterForm = ({ checked, toogleCheckBox }) => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);

@@ -3,6 +3,7 @@ import styles from "./style.module.css";
 import { Link } from "react-router-dom";
 import RegisterForm from "../RegisterForm/RegisterForm";
 import LoginForm from "../LoginForm/LoginForm";
+import { motion } from "framer-motion";
 
 const AccountForm = () => {
   const [checked, setChecked] = useState(false);
@@ -13,7 +14,15 @@ const AccountForm = () => {
   };
 
   return (
-    <div className={!checked ? styles.container : styles.containerSignUp}>
+    <motion.div
+    initial={{ opacity: 0, scale: 0.5 }}
+    animate={{ opacity: 1, scale: 1 }}
+    transition={{
+      duration: 0.9,
+      delay: 0.5,
+      ease: [0, 0.71, 0.2, 1.01]
+    }}
+    className={!checked ? styles.container : styles.containerSignUp}>
       <div className={styles.nav}>
         <ul className="ml-8">
           <li
@@ -43,7 +52,7 @@ const AccountForm = () => {
             <LoginForm checked={checked} />
         )}
       </div>
-    </div>
+    </motion.div>
   );
 };
 
