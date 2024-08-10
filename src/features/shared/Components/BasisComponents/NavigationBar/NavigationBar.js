@@ -56,15 +56,15 @@ const [selectedMenu, setSelectedMenu] = useState(null);
           </span>{" "}
         </li>
           <ul className={`${styles.menu} ${openMenus.company ? styles.menuVisible : styles.menuHidden} mt-1 px-6 flex flex-col gap-2 text-sm font-light text-color-open-list`}>
-                <li className={`${styles.LiTagTransition} ${openMenus.company ? styles.openLiTagSub : styles.closeLiTagSub}`}>
+                <Link to={"/companies/all-companies"} className={`${styles.LiTagTransition} ${openMenus.company ? styles.openLiTagSub : styles.closeLiTagSub}`}>
                     All Companies
-                </li>
-                <li className={`${styles.LiTagTransition} ${openMenus.company ? styles.openLiTagSub : styles.closeLiTagSub}`}>
+                </Link>
+                <Link to={"/companies/add-companies"} className={`${styles.LiTagTransition} ${openMenus.company ? styles.openLiTagSub : styles.closeLiTagSub}`}>
                     Add Companies
-                </li>
-                <li className={`${styles.LiTagTransition} ${openMenus.company ? styles.openLiTagSub : styles.closeLiTagSub}`}>
+                </Link>
+                <Link to={"/companies/edit-companies"} className={`${styles.LiTagTransition} ${openMenus.company ? styles.openLiTagSub : styles.closeLiTagSub}`}>
                     Edit Companies
-                </li>
+                </Link>
           </ul>
         </div>
         <div>
@@ -106,15 +106,15 @@ const [selectedMenu, setSelectedMenu] = useState(null);
           </span>{" "}
         </li>
           <ul className={`${styles.menu} ${openMenus.employees ? styles.menuVisible : styles.menuHidden} mt-1 px-6 flex flex-col gap-2 text-sm font-light text-color-open-list`}>
-                <li className={`${styles.LiTagTransition} ${openMenus.employees ? styles.openLiTagSub : styles.closeLiTagSub}`}>
+                <Link to={"/employees/all-employees"} className={`${styles.LiTagTransition} ${openMenus.employees ? styles.openLiTagSub : styles.closeLiTagSub}`}>
                     All Employees
-                </li>
+                </Link>
                 <li className={`${styles.LiTagTransition} ${openMenus.employees ? styles.openLiTagSub : styles.closeLiTagSub}`}>
                     Add Employees
                 </li>
-                <li className={`${styles.LiTagTransition} ${openMenus.employees ? styles.openLiTagSub : styles.closeLiTagSub}`}>
+                <Link to={"/employees/edit-employees"} className={`${styles.LiTagTransition} ${openMenus.employees ? styles.openLiTagSub : styles.closeLiTagSub}`}>
                     Edit Employees
-                </li>
+                </Link>
           </ul>
         </div>
         <li className={`${styles.mainText} ${selectedMenu === 'vacncies' ? styles.activeMenu : ''}`}>

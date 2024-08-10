@@ -31,6 +31,7 @@ const RegisterForm = ({ checked, toogleCheckBox }) => {
 
   const mutation = useMutation((data) => Register(data), {
     onSuccess: (response) => {
+      console.log(response);
       notify("Successfully Registered", "success");
       reset();
       // navigate("/login"); 

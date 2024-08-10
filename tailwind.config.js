@@ -11,6 +11,9 @@ module.exports = {
         "icon-bg": "#f89308",
         "main-bg": "#f0f2f8",
         "color-open-list": "#3f4254",
+        "color-text": "#3f4254",
+        "bg-tables":"#ffffff",
+        "padding-table":"15px 15px 15px 15px",
       },
       boxShadow: {
         '3xl': '0 35px 60px -15px rgba(0, 0, 0, 0.3)',

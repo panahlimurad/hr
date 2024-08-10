@@ -1,5 +1,5 @@
 import React from 'react'
-import Test from '../../../images/usrbig.jpg'
+import Test from "../../../../images/usrbig.jpg";
 import NavigationBar from '../NavigationBar/NavigationBar'
 
 const Sidebar = () => {

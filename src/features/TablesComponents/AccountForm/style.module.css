@@ -2,6 +2,7 @@
     height: 575px;
     width: 430px;
     border-radius: 5px;
+    transition: all .3s ease;
     background: rgba(35,43,85,0.95);
     background:
       linear-gradient(
@@ -22,6 +23,7 @@
 .containerSignUp{
   height: 700px;
     width: 430px;
+    transition: all .5s ease;
     border-radius: 5px;
     background: rgba(35,43,85,0.95);
     background:

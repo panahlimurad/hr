@@ -7,18 +7,24 @@ import { useMutation } from 'react-query';
 import { Login } from '../../services/api';
 import notify from '../../utils/Functions/Toastify/toastify';
 import Cookies from "js-cookie";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import ButtonSpinner from '../../shared/SmallComponents/ButtonSpinner/ButtonSpinner';
-import { useAnimate } from 'framer-motion';
+import ReCAPTCHA from 'react-google-recaptcha'
 
 
 const LoginForm = ({checked}) => {
   const [showPassword, setShowPassword] = useState(false);
   const [rememberMe, setRememberMe] = useState(false);
-  const navigate = useAnimate()
+  const [attempts, setAttempts]= useState(0)
+  const [captchaValue, setCaptchaValue] = useState(null);
+  const navigate = useNavigate()
 
   const toggleRememberMe = () => {
     setRememberMe(!rememberMe);
+  };
+
+  const handleCaptchaChange = (value) => {
+    setCaptchaValue(value);
   };
 
   const toggleShowPassword = () => {
@@ -36,6 +42,7 @@ const LoginForm = ({checked}) => {
 
   const mutateLogin = useMutation((data) => Login(data), {
     onSuccess: (response) => {
+      console.log(response);
       notify(response?.data?.message, "success");
       reset();
       if (rememberMe) {
@@ -47,7 +54,8 @@ const LoginForm = ({checked}) => {
       console.log("okey", response);
     },
     onError: (error) => {
-
+      console.log(error.response.data.login_attempts);
+      setAttempts(error?.response?.data?.login_attempts)
       let errorMessage;
       
       if (error?.response?.data?.message) {
@@ -64,7 +72,10 @@ const LoginForm = ({checked}) => {
 
 
   const LoginUser = async (data) => {
-    console.log(data);
+    if (attempts >= 5 && !captchaValue) {
+      notify("Please complete the CAPTCHA", "error");
+      return;
+    }
     mutateLogin.mutate(data);
   };
 
@@ -83,8 +94,8 @@ const LoginForm = ({checked}) => {
             {...register("email", { required: "Email is required", pattern: { value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i, message: 'Invalid email address' } })}
             type="email"
             name="email"
-            placeholder=""
             id="email"
+            placeholder=""
           />
           <label className={styles.labelForm} htmlFor="password">
             Password
@@ -122,6 +133,13 @@ const LoginForm = ({checked}) => {
           <label className={styles.labelForm} htmlFor="checkbox">
             <span className={styles.ui}></span>Keep me signed in
           </label>
+          {attempts >= 5 && 
+          <ReCAPTCHA
+          className="flex justify-center mt-5"
+          sitekey="6LevjB0qAAAAAH6UG2XsS1Eb0_4XSNHmgtaJRfH_"
+          onChange={handleCaptchaChange}
+          />
+          }
           <div className={styles.btnAnimate}>
             <button disabled={mutateLogin.isLoading} type="submit" className={styles.btnSignIn}>
               {mutateLogin.isLoading ? <ButtonSpinner/> : "Sign In"}
