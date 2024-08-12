@@ -7,12 +7,9 @@ const PageHeader = () => {
 
   
   
-  const pathSegment = location.pathname.split("/")[2];
+  const pathSegment =  location.pathname === "/" ? "dashboard" : location.pathname.split("/")[2];
   const pathSegmentFirst = location.pathname.split("/")[1];
 
-  
-
-  
   const formattedPathSegment = pathSegment
   .replace(/-/g, ' ') 
   .toLowerCase()      
@@ -65,7 +62,7 @@ const PageHeader = () => {
                 <p
                   className="ms-1 inline-flex items-center text-[15px] font-medium text-color-text"
                 >
-                  {pathSegmentFirst.charAt(0).toUpperCase()+pathSegmentFirst.slice(1)}
+                  {location.pathname === "/" ? "Dashboard" : pathSegmentFirst.charAt(0).toUpperCase()+pathSegmentFirst.slice(1)}
                 </p>
               </div>
             </li>
@@ -89,7 +86,7 @@ const PageHeader = () => {
                 <p
                   className="ms-1 inline-flex items-center text-[15px] font-medium text-color-text"
                 >
-                  {formattedPathSegment}
+                  {location.pathname === "/" ? null : formattedPathSegment}
                 </p>
               </div>
             </li>

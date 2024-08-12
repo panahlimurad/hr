@@ -22,7 +22,7 @@ const MainLayouts = () => {
       <div className="w-[83%]">
         <Header />
         <main className="bg-main-bg p-7">
-          {location.pathname !== "/" && <PageHeader/>}
+          <PageHeader/>
           <div className="mt-6">
           <Routes>
             <Route path="/" element={<Dashboard />} />
