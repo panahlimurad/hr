@@ -10,6 +10,9 @@ import EditCompanies from "../../pages/EditCompanies/EditCompanies";
 import AddTable from "../shared/Components/BasisComponents/AddTable/AddTable";
 import AddCompanies from "../../pages/AddCompanies/AddCompanies";
 
+import AllDepartments from "../../pages/AllDepartments/AllDepartments";
+import AddDepartments from "../../pages/AddDepartments/AddDepartments";
+
 const MainLayouts = () => {
 
   const location = useLocation()
@@ -30,6 +33,8 @@ const MainLayouts = () => {
             <Route path="companies/all-companies" element={<AllCompanies />} />
             <Route path="companies/edit-companies" element={<EditCompanies />} />
             <Route path="companies/add-companies" element={<AddCompanies />} />
+            <Route path="departments/all-departments" element={<AllDepartments />} />
+            <Route path="departments/add-departments" element={<AddDepartments />} />
           </Routes>
           </div>
         </main>
