@@ -10,7 +10,7 @@ import KeyboardDoubleArrowLeftIcon from '@mui/icons-material/KeyboardDoubleArrow
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
 
-const AllDataTables = () => {
+const CompaniesTable = () => {
   return (
     <div className="bg-bg-tables rounded-xl p-[15px] flex flex-col">
         <div className='flex justify-end'>
@@ -177,4 +177,4 @@ const AllDataTables = () => {
   )
 }
 
-export default AllDataTables
+export default CompaniesTable

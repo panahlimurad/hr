@@ -1,9 +1,9 @@
-import AllDataTables from "../../features/TablesComponents/AllDataTables/AllDataTables";
+import CompaniesTable from "../../features/TablesComponents/CompaniesTable/CompaniesTable";
 
 const AllDepartments = () => {
   return (
     <div>
-      <AllDataTables />
+      <CompaniesTable />
     </div>
   );
 };

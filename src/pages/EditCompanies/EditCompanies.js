@@ -1,5 +1,4 @@
 import React from 'react'
-import EditTable from '../../features/shared/Components/BasisComponents/AddTable/AddTable';
 
 
 const EditCompanies = () => {

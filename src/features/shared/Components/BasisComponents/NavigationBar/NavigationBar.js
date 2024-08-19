@@ -9,8 +9,10 @@ import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
 import GroupIcon from "@mui/icons-material/Group";
 import styles from "./style.module.css";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const NavigationBar = () => {
+  const state = useSelector((state) => state.boolean.hamburgerState);
   const [selectedMenu, setSelectedMenu] = useState(null);
 
   const [openMenus, setOpenMenus] = useState({
@@ -33,7 +35,34 @@ const NavigationBar = () => {
 
   return (
     <div className="mt-4 px-3">
-      <ul>
+      {!state ? 
+    <ul className="flex flex-col justify-center items-center">
+    <li
+        className={styles.mainText}
+      >
+      <DashboardIcon sx={{ width: "25px", height: "25px", color: "#0D1717" }} />
+      </li>
+      <li
+        className={styles.mainText}
+      >
+      <AddBusinessIcon sx={{ width: "25px", height: "25px", color: "#0D1717" }} />
+      </li>
+      <li
+        className={styles.mainText}
+      >
+      <AutoAwesomeMotionIcon sx={{ width: "25px", height: "25px", color: "#0D1717" }} />
+      </li>
+      <li
+        className={styles.mainText}
+      >
+      <PeopleIcon sx={{ width: "25px", height: "25px", color: "#0D1717" }} />
+      </li>
+      <li
+        className={styles.mainText}
+      >
+      <BusinessCenterIcon sx={{ width: "25px", height: "25px", color: "#0D1717" }} />
+      </li>
+    </ul>:   <ul>
         <li
           className={`${styles.mainText} ${
             selectedMenu === "home" ? styles.activeMenu : ""
@@ -190,13 +219,17 @@ const NavigationBar = () => {
             >
               All Employees
             </Link>
+            <Link
+              to={"/employees/add-employees"}
+            >
             <li
               className={`${styles.LiTagTransition} ${
                 openMenus.employees ? styles.openLiTagSub : styles.closeLiTagSub
               }`}
-            >
+              >
               Add Employees
             </li>
+              </Link>
             <Link
               to={"/employees/edit-employees"}
               className={`${styles.LiTagTransition} ${
@@ -221,7 +254,10 @@ const NavigationBar = () => {
             Vacncies
           </Link>
         </li>
-      </ul>
+      </ul> 
+    }
+      
+      
     </div>
   );
 };

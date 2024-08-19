@@ -1,5 +1,6 @@
 import React from 'react'
-import AddTable from '../../features/shared/Components/BasisComponents/AddTable/AddTable'
+import AddTable from '../../features/TablesComponents/AddTable/AddTable'
+
 
 const AddCompanies = () => {
   return (

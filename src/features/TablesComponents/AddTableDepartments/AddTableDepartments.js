@@ -1,12 +1,12 @@
-import React, { useRef, useState } from "react";
-// import MoreVertIcon from '@mui/icons-material/MoreVert';
-import styles from "./style.module.css";
-import AddAPhotoIcon from "@mui/icons-material/AddAPhoto";
-import { useForm } from "react-hook-form";
+import React, { useRef, useState } from 'react'
+import styles from './style.module.css'
+import { useForm } from 'react-hook-form';
 import PhoneInput from "react-phone-input-2";
-import "react-phone-input-2/lib/bootstrap.css";
+import AddAPhotoIcon from "@mui/icons-material/AddAPhoto";
 
-const AddTable = () => {
+
+const AddTableDepartments = () => {
+
   const fileInputRef = useRef();
   const [preview, setPreview] = useState(null);
 
@@ -36,11 +36,12 @@ const AddTable = () => {
     console.log(data);
   };
 
+
   return (
     <div className="bg-bg-tables rounded-xl p-[15px] flex flex-col">
       <div className="flex items-center justify-between">
         <div className="text-[16px] font-semibold text-color-text">
-          Edit Companies
+        Add Departments
         </div>
         <div className="flex gap-4">
           <button className={styles.formBtnSubmit}>Submit</button>
@@ -67,7 +68,7 @@ const AddTable = () => {
                 type="text"
                 name="name"
                 id="name"
-                placeholder="Company Name"
+                placeholder="Department Name"
               />
               <input
                 {...register("email", { required: "Email is required", pattern: { value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i, message: 'Invalid email address' } })}
@@ -75,23 +76,7 @@ const AddTable = () => {
                 type="email"
                 name="email"
                 id="email"
-                placeholder="Company Email"
-              />
-              <input
-              {...register("address", { required: "Address is required" })}
-                className={styles.formInput}
-                id="address"
-                name="address"
-                type="text"
-                placeholder="Company Address"
-              />
-              <input
-                {...register("website", { required: "Website is required" })}
-                id="website"
-                name="website"
-                className={styles.formInput}
-                type="text"
-                placeholder="Website url"
+                placeholder="Department Email"
               />
             </div>
             <div className="flex flex-col flex-1 gap-10">
@@ -108,22 +93,6 @@ const AddTable = () => {
                   required: true,
                   autoFocus: true,
                 }}
-              />
-              <input
-              {...register("fax", { required: "Fax is required" })}
-                id="fax"
-                name="fax"
-                className={styles.formInput}
-                type="text"
-                placeholder="Company Fax"
-              />
-              <input
-              {...register("linkedin", { required: "Linkedin is required" })}
-                id="linkedin"
-                name="linkedin"
-                className={styles.formInput}
-                type="url"
-                placeholder="Linkedin url"
               />
               <input
               {...register("responsiblePerson", { required: "Responsible person is required" })}
@@ -162,7 +131,7 @@ const AddTable = () => {
         </form>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default AddTable;
+export default AddTableDepartments

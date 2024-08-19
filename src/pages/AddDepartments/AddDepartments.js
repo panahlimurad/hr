@@ -1,5 +1,11 @@
+import AddTableDepartments from "../../features/TablesComponents/AddTableDepartments/AddTableDepartments";
+
 const AddDepartments = () => {
-  return <div>AddDepartments</div>;
+  return (
+    <div>
+      <AddTableDepartments/>
+    </div>
+  );
 };
 
 export default AddDepartments;

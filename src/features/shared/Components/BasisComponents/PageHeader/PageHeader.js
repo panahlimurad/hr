@@ -20,7 +20,7 @@ const PageHeader = () => {
   return (
     <div className="w-full h-[30px] flex gap-2">
       <div className="border-r-2 border-[#babdbc] h-full w-auto pr-2 flex justify-center items-center">
-        <p className="text-[23px] font-semibold text-color-text">Employees</p>
+        <p className="text-[23px] font-semibold text-color-text">{formattedPathSegment}</p>
       </div>
       <div className="flex justify-center items-center">
         <nav className="flex" aria-label="Breadcrumb">
