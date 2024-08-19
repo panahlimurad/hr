@@ -130,7 +130,7 @@ const NavigationBar = () => {
             <Link
               to={"/departments/all-departments"}
               className={`${styles.LiTagTransition} ${
-                openMenus.company ? styles.openLiTagSub : styles.closeLiTagSub
+                openMenus.departments ? styles.openLiTagSub : styles.closeLiTagSub
               }`}
             >
               All Departments
@@ -139,7 +139,7 @@ const NavigationBar = () => {
             <Link
               to={"/departments/add-departments"}
               className={`${styles.LiTagTransition} ${
-                openMenus.company ? styles.openLiTagSub : styles.closeLiTagSub
+                openMenus.departments ? styles.openLiTagSub : styles.closeLiTagSub
               }`}
             >
               Add Departments
