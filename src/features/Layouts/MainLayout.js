@@ -2,7 +2,6 @@ import React from "react";
 import Header from "../shared/Components/BasisComponents/Header/Header";
 import { Route, Routes } from "react-router-dom";
 import Dashboard from "../../pages/Dashboard/dashboard";
-import Employees from "../../pages/Employees/employees";
 import Sidebar from "../shared/Components/BasisComponents/Sidebar/Sidebar";
 import PageHeader from "../shared/Components/BasisComponents/PageHeader/PageHeader";
 import AllCompanies from "../../pages/AllCompanies/AllCompanies";
@@ -13,6 +12,7 @@ import AllDepartments from "../../pages/AllDepartments/AllDepartments";
 import AddDepartments from "../../pages/AddDepartments/AddDepartments";
 import { useSelector } from "react-redux";
 import AddEmployees from "../../pages/AddEmployees/AddEmployees";
+import AllEmployees from "../../pages/AllEmployees/AllEmployees";
 
 const MainLayouts = () => {
   const state = useSelector((state) => state.boolean.hamburgerState);
@@ -39,7 +39,7 @@ const MainLayouts = () => {
           <div className="mt-6">
             <Routes>
               <Route path="/" element={<Dashboard />} />
-              <Route path="employees/all-employees" element={<Employees />} />
+              <Route path="employees/all-employees" element={<AllEmployees />} />
               <Route path="employees/add-employees" element={<AddEmployees />} />
               <Route
                 path="companies/all-companies"

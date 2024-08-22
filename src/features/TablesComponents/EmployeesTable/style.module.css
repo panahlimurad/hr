@@ -1,0 +1,136 @@
+.formInput {
+    height: 30px;
+    outline: none;
+    border-bottom: 1px solid #aeaeae;
+    position: relative;
+    background: transparent;
+    transition: border-bottom-color 0.3s ease-in-out;
+  
+    &::placeholder {
+      color: #848e98;
+      font-size: 13px;
+      font-weight: 400;
+    }
+  }
+  
+  .formInput:focus {
+    border-bottom-color: #00f;
+  }
+  
+  .tableContainer {
+    width: 100%;
+    margin-top: 20px;
+    border: 1px solid #eeeeee;
+  }
+  
+  .tableTd {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    height: 60px;
+    border-bottom: 1px solid #eeeeee;
+  }
+  
+  .tableTdIcon{
+    display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 70px;
+      height: 60px;
+    border-bottom: 1px solid #eeeeee;
+  }
+  
+  .tableTh {
+    display: flex;
+    font-size: 14px;
+    font-weight: 700;
+    color: #000000;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    height: 40px;
+    border-bottom: 1px solid #eeeeee;
+  }
+  
+  .tableThIcon{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 70px;
+      height: 40px;
+    border-bottom: 1px solid #eeeeee;
+  }
+  
+  .iconEdit{
+      background-color: #4aac4f;
+      border-radius: 50%;
+      width: 25px;
+      height: 25px;
+      padding: 5px;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  
+  }
+  
+  .iconDelete{
+      background-color: #ff5f33;
+      border-radius: 50%;
+      width: 25px;
+      height: 25px;
+      padding: 5px;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+      margin-left: 10px;
+      }
+  
+      .imgTable{
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+          border: 2px solid #fff;
+      }
+  
+      .ulList{
+        display: flex;
+        width: 100%;
+        border: 1px solid #eeeeee;
+        border-radius: 5px;
+        height: 30px;
+        justify-content: center;
+        align-items: center;
+      }
+  
+      .ulList li{
+        width: 40px;
+        border-right: 1px solid #eeeeee;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 16px;
+        font-weight: 300;
+        height: 30px;
+        cursor: pointer;
+  
+  &:hover{
+    background-color: #f0f2f8;
+    color: #000000;
+  }
+  
+      }
+  
+      .ulList li:last-child{
+        border-right: none;
+      }
+  
+      .selectLi{
+        background-color: #096efd;
+        color: #fff;
+      }
+  
+      .selectArrow{
+        background-color: #eaecf0;
+      }

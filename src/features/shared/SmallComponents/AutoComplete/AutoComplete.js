@@ -6,13 +6,13 @@ import Stack from '@mui/material/Stack';
 
 export default function Tags() {
   return (
-    <Stack spacing={3} sx={{ width: '100%' }}>
+    <Stack spacing={3} sx={{ width: '100%', mt: "-11px"}}>
       <Autocomplete
         multiple
         id="tags-standard"
         options={top100Films}
         getOptionLabel={(option) => option.title}
-        defaultValue={[top100Films[13]]}
+        // defaultValue={[top100Films[13]]}
         renderInput={(params) => (
           <TextField
             {...params}
