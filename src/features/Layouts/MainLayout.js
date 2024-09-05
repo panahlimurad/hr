@@ -13,6 +13,7 @@ import AddDepartments from "../../pages/AddDepartments/AddDepartments";
 import { useSelector } from "react-redux";
 import AddEmployees from "../../pages/AddEmployees/AddEmployees";
 import AllEmployees from "../../pages/AllEmployees/AllEmployees";
+import EmployeesDetails from "../../pages/EmployeesDetails/EmployeesDetails";
 
 const MainLayouts = () => {
   const state = useSelector((state) => state.boolean.hamburgerState);
@@ -30,7 +31,7 @@ const MainLayouts = () => {
       </div>
       <div
         className={`${
-          state ? "w-[83%] bg-main-bg" : "w-[95%] bg-main-bg"
+          state ? "w-[83%] bg-main-bg sticky" : "w-[95%] bg-main-bg"
         } transition-all duration-500 ease`}
       >
         <Header />
@@ -41,6 +42,7 @@ const MainLayouts = () => {
               <Route path="/" element={<Dashboard />} />
               <Route path="employees/all-employees" element={<AllEmployees />} />
               <Route path="employees/add-employees" element={<AddEmployees />} />
+              <Route path="employees/employee-details" element={<EmployeesDetails />} />
               <Route
                 path="companies/all-companies"
                 element={<AllCompanies />}

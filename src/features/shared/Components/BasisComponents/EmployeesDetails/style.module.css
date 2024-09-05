@@ -1,0 +1,68 @@
+.card{
+    background-color: #ffffff;
+    width: 100%;
+    border-radius: 0 0 8px 8px;
+} 
+
+.aboutContainer{
+    background-color: #ffffff;
+    width: 100%;
+    border-radius: 8px;
+}
+
+.descriptionContainer{
+    background-color: #ffffff;
+    border-radius: 8px;
+    width: 100%;
+    padding: 9px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.text{
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 21px;
+    color: #555555;
+    margin-top: 8px;
+}
+
+.educationContainer{
+    background-color: #ffffff;
+    border-radius: 8px;
+    width: 100%;
+    padding: 9px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.skillsContainer{
+    background-color: #ffffff;
+    border-radius: 8px;
+    width: 100%;
+    padding: 9px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.skillsContainer button{
+    border: 1px solid #919aa3;
+    border-radius: 8px;
+    height: 30px;
+    padding: 0 8px 0 8px;
+    font-size: 14px;
+    cursor: not-allowed;
+}
+
+.experienceContainer{
+    background-color: #ffffff;
+    border-radius: 8px;
+    width: 100%;
+    padding: 9px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
