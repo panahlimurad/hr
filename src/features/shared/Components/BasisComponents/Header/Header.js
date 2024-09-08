@@ -6,23 +6,25 @@ import InfoIcon from '@mui/icons-material/Info';
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 import SettingsIcon from "@mui/icons-material/Settings";
 import FullscreenIcon from '@mui/icons-material/Fullscreen';
-import SquareIcon from '@mui/icons-material/Square';
 import PersonIcon from '@mui/icons-material/Person';
 import Test from "../../../../images/usrbig.jpg";
 import { useDispatch, useSelector } from "react-redux";
-import { hamburgerStateToggle } from "../../../../../store/Slices/booleanSlice";
+import { hamburgerStateToggle, settingsSidebarToggle } from "../../../../../store/Slices/booleanSlice";
 
-const Header = () => {
+const Header = ({handleSettingRef}) => {
 
   const [openDropDown, setOpenDropDown] = useState(false)
   const dropDownRef = useRef(null)
   const avatarRef = useRef(null);
-
+  const settingsRef = useRef(null);
+  const state = useSelector((state) => state.boolean.settingsSidebarState);
+  
   const toggleDropDown = () => {
     setOpenDropDown(!openDropDown)
   }
 
   useEffect(()=>{
+    
     const handleClickOutside=(event)=>{
       
      if (
@@ -45,10 +47,14 @@ const Header = () => {
 
   const dispatch = useDispatch()
 
-  const state = useSelector((state) => state.boolean.hamburgerState)
   
   const handleDispatch = () => {
     dispatch(hamburgerStateToggle())
+  }
+
+  const openSettingsSideBar=()=>{
+    handleSettingRef(settingsRef)
+    dispatch(settingsSidebarToggle())
   }
 
   return (
@@ -87,7 +93,7 @@ const Header = () => {
         <div ref={avatarRef} onClick={toggleDropDown} className="cursor-pointer">
           <img className="w-8 h-8 rounded-full object-cover" src={Test} alt="Rounded avatar" />
         </div>
-        <div>
+        <div ref={settingsRef} onClick={openSettingsSideBar}>
           <SettingsIcon
           sx={{
             width: "25px",

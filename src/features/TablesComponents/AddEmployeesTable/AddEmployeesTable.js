@@ -83,14 +83,14 @@ const AddEmployeesTable = () => {
                 placeholder="Name"
               />
               <input
-                {...register("full-name", {
-                  required: "Full Name is required",
+                {...register("surname", {
+                  required: "surname is required",
                 })}
                 className={styles.formInput}
                 type="text"
-                name="full-name"
-                id="full-name"
-                placeholder="Full Name"
+                name="surname"
+                id="surname"
+                placeholder="Surname"
               />
               <input
                 {...register("email", {

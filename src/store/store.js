@@ -3,6 +3,6 @@ import openSidebarList from './Slices/booleanSlice'
 
 export const store = configureStore({
   reducer: {
-    boolean: openSidebarList
+    boolean: openSidebarList,
   },
 })

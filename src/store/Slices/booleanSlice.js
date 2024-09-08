@@ -2,7 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
     toogleAuth:false,
-    hamburgerState:true
+    hamburgerState:true,
+    settingsSidebarState:false
 }
 
 const booleanSlice = createSlice({
@@ -14,11 +15,14 @@ const booleanSlice = createSlice({
         },
         hamburgerStateToggle: state=>{
             state.hamburgerState = !state.hamburgerState
+        },
+        settingsSidebarToggle: state=>{
+            state.settingsSidebarState = !state.settingsSidebarState
         }
     }
 })
 
 
-export const {toogleAuthComponent, hamburgerStateToggle} = booleanSlice.actions
+export const {toogleAuthComponent, hamburgerStateToggle, settingsSidebarToggle} = booleanSlice.actions
 
 export default booleanSlice.reducer
