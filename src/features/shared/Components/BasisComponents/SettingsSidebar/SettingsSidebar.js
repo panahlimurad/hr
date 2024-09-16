@@ -1,19 +1,35 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styles from "./style.module.css";
 import WbSunnyIcon from "@mui/icons-material/WbSunny";
 import NightsStayIcon from "@mui/icons-material/NightsStay";
 import { useDispatch, useSelector } from "react-redux";
-import { settingsSidebarToggle } from "../../../../../store/Slices/booleanSlice";
-const SettingsSidebar = ({ settingsRef }) => {
+import { setSideBarColor, settingsSidebarToggle } from "../../../../../store/Slices/booleanSlice";
+const SettingsSidebar = ({ settingsRef, handleModeState }) => {
   const state = useSelector((state) => state.boolean.settingsSidebarState);
 
+  const [stateSideBarColor, setStateSideBarColor] = useState(()=>{
+   return localStorage.getItem("sideBarColor") ? localStorage.getItem("sideBarColor") : "light"
+  })
+
+  const handleMode = (event) => {
+    handleModeState(event);
+  }
+
+  const sideBarRef = useRef(null);
   const dispatch = useDispatch();
   
-  const sideBarRef = useRef(null);
+
+  const changeColorSideBar = (color) => {
+    localStorage.setItem("sideBarColor", color)
+    setStateSideBarColor(color)
+    handleMode(color)
+  };
+  
+
+  
   
   useEffect(() => {
     const handleClickOutside = (event) => {
-      
       if (
         settingsRef?.current && 
         !settingsRef.current.contains(event.target) && 
@@ -47,14 +63,14 @@ const SettingsSidebar = ({ settingsRef }) => {
         <div className="flex flex-col gap-2">
           <p>SIDEBAR COLOR</p>
           <div className="flex gap-4">
-            <div className={styles.iconMode}>
+            <div onClick={() => changeColorSideBar("light")} className={`${stateSideBarColor === "light" ? styles.activeIconMode : styles.iconMode}`}>
               <WbSunnyIcon
-                sx={{ width: "15px", height: "15px", color: "white" }}
+                sx={{ width: "15px", height: "15px", color: stateSideBarColor === "light" ? "white" : "black" }}
               />
             </div>
-            <div className={styles.iconMode}>
+            <div onClick={() => changeColorSideBar("dark")} className={`${stateSideBarColor === "dark" ? styles.activeIconMode : styles.iconMode}`}>
               <NightsStayIcon
-                sx={{ width: "15px", height: "15px", color: "white" }}
+                sx={{ width: "15px", height: "15px", color: stateSideBarColor === "dark" ? "white" : "black" }}
               />
             </div>
           </div>

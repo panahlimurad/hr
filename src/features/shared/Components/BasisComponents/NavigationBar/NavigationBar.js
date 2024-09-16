@@ -11,9 +11,10 @@ import styles from "./style.module.css";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 
-const NavigationBar = () => {
+const NavigationBar = ({colorSideBar}) => {
   const state = useSelector((state) => state.boolean.hamburgerState);
   const [selectedMenu, setSelectedMenu] = useState(null);
+  const stateSideBarColor = useSelector((state) => state.boolean.sideBarColor)
 
   const [openMenus, setOpenMenus] = useState({
     company: false,
@@ -64,7 +65,7 @@ const NavigationBar = () => {
       </li>
     </ul>:   <ul>
         <li
-          className={`${styles.mainText} ${
+          className={`${colorSideBar === "light"  ? styles.mainText : styles.mainTextDarkMode} ${
             selectedMenu === "home" ? styles.activeMenu : ""
           }`}
         >
@@ -79,7 +80,7 @@ const NavigationBar = () => {
         </li>
         <div>
           <li
-            className={`${styles.mainText} ${
+            className={`${colorSideBar === "light"  ? styles.mainText : styles.mainTextDarkMode} ${
               selectedMenu === "company" ? styles.activeMenu : ""
             }`}
           >
@@ -131,7 +132,7 @@ const NavigationBar = () => {
         </div>
         <div>
           <li
-            className={`${styles.mainText} ${
+            className={`${colorSideBar === "light"  ? styles.mainText : styles.mainTextDarkMode} ${
               selectedMenu === "departments" ? styles.activeMenu : ""
             }`}
           >
@@ -187,7 +188,7 @@ const NavigationBar = () => {
         </div>
         <div>
           <li
-            className={`${styles.mainText} ${
+            className={`${colorSideBar === "light"  ? styles.mainText : styles.mainTextDarkMode} ${
               selectedMenu === "employees" ? styles.activeMenu : ""
             }`}
           >
@@ -241,7 +242,7 @@ const NavigationBar = () => {
           </ul>
         </div>
         <li
-          className={`${styles.mainText} ${
+          className={`${colorSideBar === "light"  ? styles.mainText : styles.mainTextDarkMode} ${
             selectedMenu === "vacncies" ? styles.activeMenu : ""
           }`}
         >

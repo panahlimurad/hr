@@ -8,6 +8,23 @@
     align-items: center;
     font-size: 14px;
     padding: 0px 16px;
+    transition: color 0.5s ease;
+    &:hover{
+        background-color: #f3f6f9;
+    }
+
+}
+
+.mainTextDarkMode{
+  font-weight: 400;
+    height: 45px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    padding: 0px 16px;
+    transition: color 0.5s ease;
     &:hover{
         background-color: #f3f6f9;
     }

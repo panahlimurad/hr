@@ -3,7 +3,8 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
     toogleAuth:false,
     hamburgerState:true,
-    settingsSidebarState:false
+    settingsSidebarState:false,
+    sideBarColor:localStorage.getItem("sideBarColor") ? localStorage.getItem("sideBarColor") : "light",
 }
 
 const booleanSlice = createSlice({
@@ -18,11 +19,14 @@ const booleanSlice = createSlice({
         },
         settingsSidebarToggle: state=>{
             state.settingsSidebarState = !state.settingsSidebarState
+        },
+        setSideBarColor: (state)=>{
+            state.sideBarColor = state.sideBarColor
         }
     }
 })
 
 
-export const {toogleAuthComponent, hamburgerStateToggle, settingsSidebarToggle} = booleanSlice.actions
+export const {toogleAuthComponent, hamburgerStateToggle, settingsSidebarToggle,setSideBarColor} = booleanSlice.actions
 
 export default booleanSlice.reducer

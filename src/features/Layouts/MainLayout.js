@@ -19,9 +19,17 @@ import SettingSidebar from '../shared/Components/BasisComponents/SettingsSidebar
 const MainLayouts = () => {
   const state = useSelector((state) => state.boolean.hamburgerState);
   const [settingsRef, setSettingsRef] = useState(null)
+  const [colorSideBar, setColorSideBar] = useState(() => {
+    return localStorage.getItem("sideBarColor") ? localStorage.getItem("sideBarColor") : "light"
+  })
+  
 
   const handleSettingRef=(event)=>{
     setSettingsRef(event)
+  }
+
+  const handleModeState = (event) => {
+    setColorSideBar(event)
   }
 
   return (
@@ -31,7 +39,7 @@ const MainLayouts = () => {
           state ? "w-[17%] bg-sidebar-bg" : "w-[5%] bg-sidebar-bg"
         } transition-all duration-500 ease`}
       >
-        <Sidebar />
+        <Sidebar colorSideBar={colorSideBar} />
       </div>
       <div
         className={`${
@@ -73,7 +81,7 @@ const MainLayouts = () => {
               />
             </Routes>
           </div>
-          <SettingSidebar settingsRef={settingsRef}/>
+          <SettingSidebar handleModeState={handleModeState} settingsRef={settingsRef}/>
         </main>
       </div>
     </div>
