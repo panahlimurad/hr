@@ -19,10 +19,17 @@ import SettingSidebar from '../shared/Components/BasisComponents/SettingsSidebar
 const MainLayouts = () => {
   const state = useSelector((state) => state.boolean.hamburgerState);
   const [settingsRef, setSettingsRef] = useState(null)
+  const [stateHeaderColor, setStateHeaderColor] = useState(()=>{
+    return localStorage.getItem("headerColor") ? localStorage.getItem("headerColor") : "#343c48"
+  })
   const [colorSideBar, setColorSideBar] = useState(() => {
     return localStorage.getItem("sideBarColor") ? localStorage.getItem("sideBarColor") : "light"
   })
   
+
+  const handleColorHeader = (event) => {
+    setStateHeaderColor(event)
+  }
 
   const handleSettingRef=(event)=>{
     setSettingsRef(event)
@@ -46,7 +53,7 @@ const MainLayouts = () => {
           state ? "w-[83%] bg-main-bg sticky" : "w-[95%] bg-main-bg"
         } transition-all duration-500 ease`}
       >
-        <Header handleSettingRef={handleSettingRef}/>
+        <Header stateHeaderColor={stateHeaderColor} handleSettingRef={handleSettingRef}/>
         <main className="bg-main-bg p-7 relative">
           <PageHeader />
           <div className="mt-6">
@@ -81,7 +88,7 @@ const MainLayouts = () => {
               />
             </Routes>
           </div>
-          <SettingSidebar handleModeState={handleModeState} settingsRef={settingsRef}/>
+          <SettingSidebar handleColorHeader={handleColorHeader} handleModeState={handleModeState} settingsRef={settingsRef}/>
         </main>
       </div>
     </div>

@@ -118,6 +118,8 @@
     border-radius: 4px;
     cursor: pointer;
     border: 1px solid #b0b0b0;
+    cursor: pointer;
+    position: relative;
 }
 
 .list2{
@@ -127,6 +129,8 @@
     border-radius: 4px;
     cursor: pointer;
     border: 1px solid #b0b0b0;
+    cursor: pointer;
+    position: relative;
 
 }
 
@@ -137,16 +141,20 @@
     border-radius: 4px;
     cursor: pointer;
     border: 1px solid #b0b0b0;
+    cursor: pointer;
+    position: relative;
 
 }
 
 .list4{
-    background-color: #10a8f2;
+    background-color: #00d8da;
     width: 23px;
     height: 23px;
     border-radius: 4px;
     cursor: pointer;
     border: 1px solid #b0b0b0;
+    cursor: pointer;
+    position: relative;
 
 }
 
@@ -157,6 +165,8 @@
     border-radius: 4px;
     cursor: pointer;
     border: 1px solid #b0b0b0;
+    cursor: pointer;
+    position: relative;
 
 }
 
@@ -167,6 +177,8 @@
     border-radius: 4px;
     cursor: pointer;
     border: 1px solid #b0b0b0;
+    cursor: pointer;
+    position: relative;
 
 }
 
@@ -177,5 +189,7 @@
     border-radius: 4px;
     cursor: pointer;
     border: 1px solid #b0b0b0;
+    cursor: pointer;
+    position: relative;
 
 }

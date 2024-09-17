@@ -11,7 +11,7 @@ import Test from "../../../../images/usrbig.jpg";
 import { useDispatch, useSelector } from "react-redux";
 import { hamburgerStateToggle, settingsSidebarToggle } from "../../../../../store/Slices/booleanSlice";
 
-const Header = ({handleSettingRef}) => {
+const Header = ({handleSettingRef, stateHeaderColor}) => {
 
   const [openDropDown, setOpenDropDown] = useState(false)
   const dropDownRef = useRef(null)
@@ -23,8 +23,7 @@ const Header = ({handleSettingRef}) => {
     setOpenDropDown(!openDropDown)
   }
 
-  useEffect(()=>{
-    
+  useEffect(()=>{    
     const handleClickOutside=(event)=>{
       
      if (
@@ -58,13 +57,13 @@ const Header = ({handleSettingRef}) => {
   }
 
   return (
-    <div className="w-full h-[60px] relative bg-header-bg flex items-center justify-between p-7">
+    <div style={{backgroundColor:stateHeaderColor}} className="w-full h-[60px] relative flex items-center justify-between p-7">
       <div onClick={handleDispatch} className="w-[25px] flex h-[30px]">
         <MenuIcon
           sx={{
             width: "25px",
             height: "30px",
-            color: "white",
+            color: stateHeaderColor === "white" ? "black" : "white",
             cursor: "pointer",
           }}
         />
@@ -75,7 +74,7 @@ const Header = ({handleSettingRef}) => {
            sx={{
             width: "25px",
             height: "25px",
-            color: "white",
+            color: stateHeaderColor === "white" ? "black" : "white",
             cursor: "pointer",
           }}
           />
@@ -85,7 +84,7 @@ const Header = ({handleSettingRef}) => {
             sx={{
               width: "25px",
               height: "25px",
-              color: "white",
+              color: stateHeaderColor === "white" ? "black" : "white",
               cursor: "pointer",
             }}
           />
@@ -98,7 +97,7 @@ const Header = ({handleSettingRef}) => {
           sx={{
             width: "25px",
             height: "25px",
-            color: "white",
+            color: stateHeaderColor === "white" ? "black" : "white",
             cursor: "pointer",
             transition: "transform 0.3s ease-in-out",
             "&:hover": {

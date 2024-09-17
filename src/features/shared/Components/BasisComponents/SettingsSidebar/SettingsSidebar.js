@@ -3,13 +3,18 @@ import styles from "./style.module.css";
 import WbSunnyIcon from "@mui/icons-material/WbSunny";
 import NightsStayIcon from "@mui/icons-material/NightsStay";
 import { useDispatch, useSelector } from "react-redux";
-import { setSideBarColor, settingsSidebarToggle } from "../../../../../store/Slices/booleanSlice";
-const SettingsSidebar = ({ settingsRef, handleModeState }) => {
+import { settingsSidebarToggle } from "../../../../../store/Slices/booleanSlice";
+import DoneIcon from '@mui/icons-material/Done';
+const SettingsSidebar = ({ settingsRef, handleModeState, handleColorHeader }) => {
   const state = useSelector((state) => state.boolean.settingsSidebarState);
-
   const [stateSideBarColor, setStateSideBarColor] = useState(()=>{
    return localStorage.getItem("sideBarColor") ? localStorage.getItem("sideBarColor") : "light"
   })
+  const [selectedColor, setSelectedColor] = useState(()=>{
+    return localStorage.getItem("headerColor") ? localStorage.getItem("headerColor") : "#343c48"
+   })
+
+
 
   const handleMode = (event) => {
     handleModeState(event);
@@ -25,8 +30,50 @@ const SettingsSidebar = ({ settingsRef, handleModeState }) => {
     handleMode(color)
   };
   
+  const list = [
+    {
+      name:"black",
+      className:"list",
+      id:"#343c48"
+    },
+    {
+      name:"white",
+      className:"list2",
+      id:"white"
+    },
+    {
+      name:"blue",
+      className:"list3",
+      id:"#05a8f4"
+    },
+    {
+      name:"cyan",
+      className:"list4",
+      id:"#00d8da"
+    },
+    {
+      name:"green",
+      className:"list5",
+      id:"#57d690"
+    },
+    {
+      name:"orange",
+      className:"list6",
+      id:"#feb364"
+    },
+    {
+      name:"purple",
+      className:"list7",
+      id:"#8f9de4"
+    },
 
-  
+  ]
+
+  const selectColorOption=(id)=>{
+    localStorage.setItem("headerColor", id)
+    handleColorHeader(id)
+    setSelectedColor(id)
+  }
   
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -88,13 +135,22 @@ const SettingsSidebar = ({ settingsRef, handleModeState }) => {
           <p>SKINS</p>
           <div className="flex gap-4">
             <ul className="flex gap-2 mt-2">
-              <li className={styles.list}></li>
-              <li className={styles.list2}></li>
-              <li className={styles.list3}></li>
-              <li className={styles.list4}></li>
-              <li className={styles.list5}></li>
-              <li className={styles.list6}></li>
-              <li className={styles.list7}></li>
+              {list.map((item, index) => (
+              <li onClick={() => selectColorOption(item.id)} key={index} className={styles[item.className]}>
+                {selectedColor === item.id &&(
+                  <DoneIcon
+                  sx={{ 
+                    position: 'absolute', 
+                    top: '50%', 
+                    left: '50%', 
+                    transform: 'translate(-50%, -50%)', 
+                    color: selectedColor !== "white" ? "white" : "black", 
+                    fontSize: 20 
+                  }} 
+                  />
+                )}
+              </li>
+              ))}
             </ul>
           </div>
         </div>
