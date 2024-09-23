@@ -15,6 +15,7 @@ import AllEmployees from "../../pages/AllEmployees/AllEmployees";
 import EmployeesDetails from "../../pages/EmployeesDetails/EmployeesDetails";
 import AccountDetails from "../../pages/AccountDetails/AccountDetails";
 import SettingSidebar from '../shared/Components/BasisComponents/SettingsSidebar/SettingsSidebar'
+import CompanyCardsContainer from "../shared/Components/Containers/CompanyCardsContainer/CompanyCardsContainer";
 
 const MainLayouts = () => {
   const state = useSelector((state) => state.boolean.hamburgerState);
@@ -64,7 +65,7 @@ const MainLayouts = () => {
               <Route path="employees/employee-details" element={<EmployeesDetails />} />
               <Route
                 path="companies/all-companies"
-                element={<AllCompanies />}
+                element={<CompanyCardsContainer />}
               />
               <Route
                 path="companies/edit-companies"
